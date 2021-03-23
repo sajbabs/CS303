@@ -2,6 +2,8 @@
 /* eslint-disable no-unused-vars */
 "use strict";
 
+
+
 function pow(num,exp) {
 	return (Math.pow(num, exp));
 }
@@ -38,25 +40,15 @@ function computeGrade(grades) {
 		sum+=grades[i];
 	}
 	avg=sum/length;
-
-	switch (avg) {
-		case (avg<=100||avg>=90):
-			grade= "A";			
-			break;
-		case (avg<=89||avg>=80):
-			grade="B";
-			break;
-		case (avg<=79||avg>=70):
-			grade="C";
-			break;
-		case (avg<=69||avg>=60):
-			grade="D";
-			break;
-		default:
-			grade= "NC";
-			break;
-	}
+	
+	if (avg>=90)	grade= "A";			
+	else if (avg>=80) grade="B";
+	else if (avg>=70)	grade="C";
+	else if (avg>=60)	grade="D";
+	else grade= "NC";
 
 	return grade;
 }
 
+
+console.log( computeGrade([90,90,80,85]));
