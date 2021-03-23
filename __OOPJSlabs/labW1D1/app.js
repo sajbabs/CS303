@@ -2,12 +2,12 @@
 /* eslint-disable no-unused-vars */
 "use strict";
 
-function pow(x, n) {
-	return x * n;
+function pow(num,exp) {
+	return (Math.pow(num, exp));
 }
 
-function add2(n1, n2) {
-	return n1 + n2;
+function add2(num1, num2) {
+	return num1 + num2;
 }
 
 function add(...args) {
@@ -30,6 +30,33 @@ function add(...args) {
 	0 - 59   NC
 */
 function computeGrade(grades) {
-	return "???";
+	let sum=0;
+	let avg;
+	let grade;
+	let length= grades.length;
+	for (let i=0; i<length; i++){
+		sum+=grades[i];
+	}
+	avg=sum/length;
+
+	switch (avg) {
+		case (avg<=100||avg>=90):
+			grade= "A";			
+			break;
+		case (avg<=89||avg>=80):
+			grade="B";
+			break;
+		case (avg<=79||avg>=70):
+			grade="C";
+			break;
+		case (avg<=69||avg>=60):
+			grade="D";
+			break;
+		default:
+			grade= "NC";
+			break;
+	}
+
+	return grade;
 }
 
