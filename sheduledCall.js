@@ -13,7 +13,7 @@
 function printNumbers(from,to){
     let pTime=from;
 
-    setTimeout(function go() {
+    setTimeout(function go()) {
         alert (pTime);
         if (pTime < to){
             setTimeout(go,1000);
